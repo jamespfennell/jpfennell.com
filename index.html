@@ -1,1 +1,157 @@
-Hello, World
+
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+<style type="text/css">
+body {
+    background-color: #fff;
+    color: #333;
+    font: 15px helvetica, arial, freesans, clean, sans-serif;
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased
+}
+
+h1 {text-align: center;
+    font-weight: 300;
+}
+h2 {
+    font-weight: 400;
+    border-bottom: 0px dashed gray;
+    font-size: 1.4em;
+    padding: 0px; 
+    margin: 0px 0px 0px 0px;
+}
+h3 {
+    font-weight: normal;
+    font-size: 1.1em;
+}
+
+a {
+    color: #3f9472;
+    }
+a:hover {
+color:#49ad85;  #51c498;
+}
+
+.piece {background: white; padding: 0px; margin: 30px 0px;
+border-left: 3px solid #88DDBC;margin-left: -10px; padding-left: 10px; 
+
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  padding-left: 0em; 
+  margin-left: 1.5em;
+  text-indent: -0.9em;
+  padding-top: 0.8em;
+}
+
+ul li::before {
+  content: "●";
+  color: gray; /* or whatever color you prefer */
+  padding-right: 0.3em;
+}
+</style>
+
+<body>
+
+<div style="width: 600px; margin: 10px auto; padding: 10px 0px;
+border-top: 0px solid #ccc; ">
+
+<h1>James Fennell</h1>
+
+<p>
+Hello!
+I just finished a PhD in mathematics at NYU,
+and in July will begin working as a software engineer
+at <a href="https://schrodinger.com">Schr&ouml;dinger</a>
+in New York.
+</p>
+
+
+<p>
+My software projects are hosted on my 
+<a href="https://github.com/jamespfennell">Github page</a>.
+I can be reached at
+jamespfennelll@gmail.com.
+</p>
+<div class="piece">
+
+<h2>Typesetting software</h2>
+
+
+<ul>
+    <li>Installer for the MathTime Professional 2 fonts 
+    on Tex Live in Linux or macOS. 
+    I highly recommend you move away from using the monotonous
+    Computer Modern Latex fonts and use MathTime instead. It's free!
+    </li>
+    <li>The 
+    <a href="http://ctan.org/pkg/studenthandouts">Student Handouts Latex package</a>
+    provides an easy to use mechanism for managing the production of 
+    handouts to be used in class. It also provides some changeable handout styling,
+    and comes with pretty extensive documentation.
+    (See also the <a href="https://github.com/jamespfennell/student-handouts">Github repository</a>.)
+    </li>
+
+</ul>
+
+</div>
+<div class="piece">
+<h2>Other software projects</h2>
+
+<ul>
+    <li>Taking the New York City Subway?
+    Use the <a href="https://www.realtimerail.nyc">realtimerail.nyc</a>
+    web app 
+    to see when your train
+    will arrive!
+    <!--(My long term plan is to clean up the code base and open source it.)-->
+    </li>
+    <li>The <a href="https://github.com/jamespfennell/realtime-aggregator">Realtime Aggregator software</a>
+    was designed to collect realtime data feeds. It's currently 
+    deployed collecting NYC Subway data for future data research.</li>
+
+</ul>
+</div>
+
+<div class="piece">
+<h2>Mathematics</h2>
+
+<p>
+I have a PhD in mathematics from the Courant Institute at NYU.
+My advisor was Pierre Germain.
+My thesis is entitled
+<a href="./JamesFennell-PhDThesis.pdf">
+Two topics in the theory of nonlinear Schr&ouml;dinger equations</a>.
+</p>
+
+<h3>Publications</h3>
+
+
+<ol>
+<li>
+Equivariant heat and Schr&ouml;dinger flows from Euclidean
+space to complex projective space, <i>submitted</i>.
+<a href="https://arxiv.org/abs/1804.08188">Preprint on Arxiv</a>.
+</li>
+<li>
+Resonant Hamiltonian systems associated to the one-dimensional 
+non-linear Schr&ouml;dinger equation with harmonic trapping, <i>submitted</i>.
+<a href="https://arxiv.org/abs/1804.08190">Preprint on Arxiv</a>.
+</li>
+</ol>
+</div>
+</div>
+
+
+</body>
+
+</html>
