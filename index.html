@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>James Fennell's personal page</title>
     <meta name="author" content="James Fennell">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./stylesheet.css">
 </head>
 <body>
@@ -12,114 +13,72 @@
     <h1>James Fennell</h1>
 
     <p>
-        Hello!
-        I'm a software engineer and mathematician based in New York City.
-        You can get a sense of my background 
-        <a href="./JamesFennell_resume.pdf">from my resume</a>.
+        <a href="https://github.com/jamespfennell">GitHub</a> &middot; jamespfennell@gmail.com
+        &middot; Brooklyn, NY
     </p>
+
+    <h2>Transit Software</h2>
+
+    <ul>
+        <li>
+            <p>
+                <a href="https://github.com/jamespfennell/transiter">Transiter</a> is a web service that
+                subscribes to realtime transit data feeds and provides views on the data through a REST API.
+                <a href="https://demo.transiter.io/">Demo site</a>.
+            </p>
+            <p class="small">
+                Transiter is written in Python with the help of some high-powered libraries
+                (Flask, SQL Alchemy, Celery, APScheduler).
+                It uses Postgres as a database.
+                I personally deploy it using Docker compose, but it also works with Kubernetes.
+            </p>
+        </li>
+        <li>
+            <a href="https://github.com/jamespfennell/transiter-nycsubway">Transiter New York</a>
+            contains code and configuration for integrating
+            NYC-area transit systems (subway, PATH) with Transiter.
+        </li>
+        <li>
+            <a href="https://github.com/jamespfennell/path-train-gtfs-realtime">PATH Train GTFS Realtime</a>
+            is a Go application that generates a GTFS Realtime feed for the PATH train system
+            in New York and New Jersey.
+            <a href="https://path.transitdata.nyc/gtfsrt">Stable feed url</a>.
+        </li>
+
+        <li>
+            The <a href="https://www.realtimerail.nyc">Realtime Rail NYC webapp</a> displays train times for the NYC
+            Subway.
+            It uses Transiter as a backend.
+            Despite being branded, it's fully open source
+            (<a href="https://github.com/jamespfennell/realtimerail.nyc-react">repository</a>).
+        </li>
+    </ul>
+
+    <h2>Mathematics</h2>
 
     <p>
-        My software work is currently mostly in backend web services.
-        Professionally I work on
-        <a href="https://schrodinger.com">Schr&ouml;dinger</a>'s web-based cheminformatics platform
-        <a href="https://www.schrodinger.com/livedesign">LiveDesign</a>.
-        For fun I work on transit related projects like
-        the HTTP service <a href="https://www.github.com/jamespfennell/transiter">Transiter</a>
-        and the transit app
-        <a href="https://www.realtimerail.nyc">realtimerail.nyc</a>.
+        I obtained my PhD in mathematics from the Courant Institute, New York University, in 2018.
+        My adviser was <a href="https://cims.nyu.edu/~pgermain">
+        Pierre Germain</a>.
+        My thesis is entitled
+        <i>Two topics in the theory of nonlinear Schr&ouml;dinger equations</i>
+        (<a href="./JamesFennell-PhDThesis.pdf">PDF download</a>).
     </p>
 
-    <p>
-        My software projects are hosted on my 
-        <a href="https://github.com/jamespfennell">Github page</a>.
-        I can be reached at jamespfennell@gmail.com.
-    </p>
+    <h3>Publications</h3>
 
-    <!--
-    <div class="piece">
-
-        <h2>Typesetting software</h2>
-
-        <ul>
-
-            <li><span>
-                <a href="https://github.com/jamespfennell/mathtime-installer">
-                Installer for the MathTime Professional 2 fonts</a> 
-                on Tex Live in Linux or macOS. 
-                I highly recommend you move away from using the monotonous
-                Computer Modern Latex fonts and use MathTime instead. It's free!
-            </span></li>
-
-            <li><span>
-                The 
-                <a href="http://ctan.org/pkg/studenthandouts">Student 
-                Handouts Latex package</a>
-                provides an easy to use mechanism for managing the production of 
-                handouts to be used in class. It also provides some changeable 
-                handout styling,
-                and comes with pretty extensive documentation.
-                (See also the 
-                <a href="https://github.com/jamespfennell/student-handouts">Github
-                repository</a>.)
-            </span></li>
-
-        </ul>
-
-    </div>
-
-    <div class="piece">
-
-        <h2>Other software projects</h2>
-
-        <ul>
-            <li><span>
-                Taking the New York City Subway?
-                Use the <a href="https://www.realtimerail.nyc">realtimerail.nyc</a>
-                web app to see when your train will arrive!
-                My long term plan is to clean up the code base and open source it.
-            </span></li>
-
-            <li><span>
-                The <a href="https://github.com/jamespfennell/realtime-aggregator">
-                Realtime Aggregator software</a>
-                was designed to collect generic realtime data feeds.
-                It's currently 
-                deployed collecting NYC Subway data for potential future
-                data research.
-            </span></li>
-        </ul>
-
-    </div>
-    -->
-
-    <div class="piece">
-        <h2>Mathematics</h2>
-
-        <p>
-            I defended my PhD thesis in mathematics at the Courant Institute at NYU in May 2018.
-            My advisor was <a href="https://cims.nyu.edu/~pgermain">
-            Pierre Germain</a> and
-            my thesis is entitled
-            <a href="./JamesFennell-PhDThesis.pdf">
-            Two topics in the theory of nonlinear Schr&ouml;dinger equations</a>.
-        </p>
-
-        <h3>Publications</h3>
-
-        <ol>
-            <li>
-                Equivariant heat and Schr&ouml;dinger flows from Euclidean
-                space to complex projective space, <i>submitted</i>.
-                <a href="https://arxiv.org/abs/1804.08188">Preprint on Arxiv</a>.
-            </li>
-            <li>
-                Resonant Hamiltonian systems associated to the one-dimensional 
-                non-linear Schr&ouml;dinger equation with harmonic trapping,
-                <i>forthcoming in Communications in PDE</i>.
-                <a href="https://arxiv.org/abs/1804.08190">Preprint on Arxiv</a>.
-            </li>
-        </ol>
-    </div>
+    <ol>
+        <li>
+            Equivariant heat and Schr&ouml;dinger flows from Euclidean
+            space to complex projective space
+            (<a href="https://arxiv.org/abs/1804.08188">Arxiv</a>).
+        </li>
+        <li>
+            Resonant Hamiltonian systems associated to the one-dimensional
+            non-linear Schr&ouml;dinger equation with harmonic trapping
+            (<a href="https://arxiv.org/abs/1804.08190">Arxiv</a>).
+        </li>
+    </ol>
 
 
 </div>
