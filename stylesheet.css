@@ -1,7 +1,7 @@
 body {
     background-color: #f4f5f7;
     color: rgb(22, 30, 46);
-    font-size: 15px;
+    font-size: 0.9em;
     font-family: 'Inter', arial, freesans, clean, sans-serif;
     line-height: 1.6;
 }
@@ -9,6 +9,8 @@ body {
 h1 {
     text-align: left;
     font-weight: 700;
+    margin-top: 0;
+    padding-top: 0;
 }
 
 h2 {
@@ -30,14 +32,13 @@ a {
 }
 
 a:hover {
-    text-decoration: underline;
     color: rgb(22, 30, 46);
 }
 
 .small {
-    padding-top: 0px;
+    padding-top: 0;
     font-size: 0.9em;
-    color: rgb(107, 114, 128);
+    color: rgb(97, 102, 113);
     line-height: 1.8;
 }
 
@@ -49,11 +50,19 @@ ul li {
     margin: 0.7em 0 0.7em 0;
 }
 
-#container {
-    width: 600px;
-    margin: 10px auto;
-    padding: 10px 0;
+@media all and (min-width: 0px) and (max-width: 660px) {
+    #container {
+        padding: 10px;
+        margin-top: 10px;
+    }
 }
 
+@media all and (min-width: 661px) {
+    #container {
+        width: 600px;
+        margin: 10px auto;
+        padding: 10px;
+        border-radius: 20px;
+    }
 
-
+}
