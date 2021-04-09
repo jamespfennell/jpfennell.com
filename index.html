@@ -5,24 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>James Fennell's personal page</title>
     <meta name="author" content="James Fennell">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+     <link href="https://fonts.googleapis.com/css2?family=Contrail+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./stylesheet.css">
 </head>
 <body>
+
 <div id="container">
 
     <h1>James Fennell</h1>
 
-    <p>
-        <a href="https://github.com/jamespfennell">GitHub</a> &middot; james@jpfennell.com
-        &middot; Brooklyn, New York, United States
+    <p style="text-align: center; font-size: 0.95em; margin-bottom: 20px; font-weight: 400; ">
+        <a href="https://github.com/jamespfennell">GitHub</a> &middot;
+        <!--<a href="https://linkedin.com/in/jamespfennell">LinkedIn</a> &middot;-->
+        james@jpfennell.com
     </p>
 
     <p>
-        Mathematician + software developer
+        Software developer and (former?) mathematician living in Brooklyn, NY, United States.
+
     </p>
 
-    <h2>Transit Software</h2>
+    <h2>Software</h2>
+    <ul>
+        <li>
+            <a href="https://github.com/jamespfennell/hoard">Hoard</a>
+            is a distributed fault-tolerant system for collecting data feeds, written in Go.
+            I currently have a <a href="https://hoard1.transitdata.nyc">two</a>
+            <a href="https://hoard2.transitdata.nyc">replica</a> deployment collecting NYC transit data.
+        </li>
+    </ul>
+
+    <h2>Software<span>/</span>Transit Projects</h2>
     <ul>
         <li>
             <p>
@@ -30,18 +46,14 @@
                 subscribes to realtime transit data feeds and provides views on the data through a REST API.
                 <a href="https://demo.transiter.io/">Demo site</a>.
             </p>
-            <p class="small">
-                Transiter is written in Python with the help of some great libraries
-                (Flask, SQL Alchemy, Celery, APScheduler).
-                It uses Postgres as a database.
-                I personally deploy it using Docker compose, but it also works with Kubernetes.
-            </p>
         </li>
+        <!--
         <li>
             <a href="https://github.com/jamespfennell/transiter-nycsubway">Transiter New York</a>
             contains code and configuration for integrating
             NYC-area transit systems (subway, PATH) with Transiter.
         </li>
+        -->
         <li>
             <a href="https://github.com/jamespfennell/path-train-gtfs-realtime">PATH Train GTFS Realtime</a>
             is a Go application that generates a GTFS Realtime feed for the PATH train system
@@ -56,14 +68,10 @@
                 Despite being branded, it's fully open source
                 (<a href="https://github.com/jamespfennell/realtimerail.nyc-react">repository</a>).
             </p>
-
-            <p class="small">
-                Written in JavaScript/React and uses Transiter as a backend.
-            </p>
         </li>
     </ul>
 
-    <h2>Typesetting</h2>
+    <h2>Software<span>/</span>Typesetting</h2>
 
     <p>When I was doing research mathematics I got into typesetting and created one thing people have found useful:</p>
 
@@ -82,9 +90,9 @@
         I think it's pretty flawed both aesthetically and as a piece of software engineering.
     </p>
     <p class="small">
-        (For aesthetics, read <a href="https://www.bookdepository.com/Elements-Typographic-Style-Robert-Bringhurst/9780881792126">
+        [For aesthetics, read <a href="https://www.bookdepository.com/Elements-Typographic-Style-Robert-Bringhurst/9780881792126">
         The Elements of Typographical Style</a> and make a note every time Latex
-        breaks a basic typographical rule. You will have many notes.)
+        breaks a basic typographical rule. You will have many notes.]
     </p>
 
     <h2>Mathematics</h2>
