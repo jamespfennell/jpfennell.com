@@ -1,0 +1,13 @@
+{{ define "main" }}
+
+<h1>James Fennell</h1>
+
+<p style="text-align: center; font-size: 0.95em; margin-bottom: 20px; font-weight: 400; ">
+    <a href="https://github.com/jamespfennell">GitHub</a> &middot;
+    <!--<a href="https://linkedin.com/in/jamespfennell">LinkedIn</a> &middot;-->
+    james@jpfennell.com
+</p>
+
+{{ safeHTML (replace .Content " ~~~ " "<span>/</span>") }}
+
+{{ end }}

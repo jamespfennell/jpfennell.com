@@ -1,0 +1,21 @@
+{{ define "main" }}
+
+<h1>Posts</h1>
+
+<table>
+{{ range .Pages }}
+    <tr>
+        <td>
+            {{.Date.Format "2006-01-02"}} &middot;
+        </td>
+        <td>
+            <a href="{{.Permalink}}">{{.Title}}</a>
+        </td>
+    </tr>
+{{ end }}
+</table>
+
+
+
+{{ .Content }}
+{{ end }}

@@ -1,5 +1,7 @@
-
-# An edge case in TeX
+---
+title: "An edge case in TeX"
+date: 2021-05-12T20:05:40-04:00
+---
 
 Suppose you have the following raw TeX (not LaTeX) file `first.tex`:
 

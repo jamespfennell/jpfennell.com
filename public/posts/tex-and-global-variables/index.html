@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        James Fennell
+        </title>
+    <title>James Fennell's personal page</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Contrail+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheet.css">
+</head>
+<body>
+
+<div id="container">
+
+
+
+
+<h1>TeX and global variables</h1>
+
+<p>Suppose you have the following raw TeX (not LaTeX) file <code>first.tex</code>:</p>
+<pre><code>\def\mycommand{\relax First version of my command.}
+\input second.tex \mycommand
+</code></pre><p>This defines a custom macro, inputs a second file, and then prints the output of the custom macro.
+Suppose that <code>second.tex</code> contains:</p>
+<pre><code>\def\mycommand{\relax Second version of my command.}
+Command has been redefined.
+</code></pre><p>What&rsquo;s the output of <code>pdftex first.tex</code>? It&rsquo;s what you&rsquo;d expect:</p>
+<pre><code>Command has been redefined. Second version of my command.
+</code></pre><p>The custom macro is first defined, then the second file is processed during which the macro is redefined,
+so when <code>\mycommand</code> is expanded it has the second definition.</p>
+<p>But what if we change <code>first.tex</code> by removing the space before <code>\mycommand</code>?</p>
+<pre><code>\def\mycommand{\relax First version of my command.}
+\input second.tex\mycommand
+</code></pre><p>Seems like an innocuous change. Let&rsquo;s run <code>pdftex first.tex</code>:</p>
+<pre><code>Command has been redefined. First version of my command.
+</code></pre><p>The result is different!</p>
+<p>This example illustrates an interesting edge case in TeX processing.
+Here&rsquo;s what&rsquo;s happening.
+When processing the <code>\input</code> command, TeX scans the following characters to get the filename.
+It will keep scanning until it encounters a space, or an unexpandable command like <code>\relax</code>.
+If it encounters an expandable command like a macro, however, it needs to expand the command.
+This is to support cases where the filename is in a macro:</p>
+<pre><code>\def\filename{second.tex}
+\input\filename
+</code></pre><p>In the edited version of <code>first.tex</code>, the input scanning runs until <code>\mycommand</code>.
+The macro is expanded because it may return additional characters that help identify the filename.
+However the expansion begins with <code>\relax</code>, so no characters are used.
+At this point the expansion was essentially an irreversible mistake.</p>
+
+
+
+
+
+
+
+</div>
+</body>
+</html>

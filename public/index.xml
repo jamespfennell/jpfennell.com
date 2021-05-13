@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>James Fennell</title>
+    <link>https://jpfennell.com/</link>
+    <description>Recent content on James Fennell</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 12 May 2021 20:05:40 -0400</lastBuildDate><atom:link href="https://jpfennell.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>An edge case in TeX</title>
+      <link>https://jpfennell.com/posts/tex-expansion-edge-case/</link>
+      <pubDate>Wed, 12 May 2021 20:05:40 -0400</pubDate>
+      
+      <guid>https://jpfennell.com/posts/tex-expansion-edge-case/</guid>
+      <description>Suppose you have the following raw TeX (not LaTeX) file first.tex:
+\def\mycommand{\relax First version of my command.} \input second.tex \mycommand This defines a custom macro, inputs a second file, and then prints the output of the custom macro. Suppose that second.tex contains:
+\def\mycommand{\relax Second version of my command.} Command has been redefined. What&amp;rsquo;s the output of pdftex first.tex? It&amp;rsquo;s what you&amp;rsquo;d expect:
+Command has been redefined. Second version of my command.</description>
+    </item>
+    
+    <item>
+      <title>TeX and global variables</title>
+      <link>https://jpfennell.com/posts/tex-and-global-variables/</link>
+      <pubDate>Mon, 10 May 2021 20:05:40 -0400</pubDate>
+      
+      <guid>https://jpfennell.com/posts/tex-and-global-variables/</guid>
+      <description>Suppose you have the following raw TeX (not LaTeX) file first.tex:
+\def\mycommand{\relax First version of my command.} \input second.tex \mycommand This defines a custom macro, inputs a second file, and then prints the output of the custom macro. Suppose that second.tex contains:
+\def\mycommand{\relax Second version of my command.} Command has been redefined. What&amp;rsquo;s the output of pdftex first.tex? It&amp;rsquo;s what you&amp;rsquo;d expect:
+Command has been redefined. Second version of my command.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,5 @@
+baseURL = "https://jpfennell.com"
+languageCode = "en-us"
+title = "James Fennell"
+
+[taxonomies]
