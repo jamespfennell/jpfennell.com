@@ -41,7 +41,7 @@ pre {
     border-radius: 5px;
     padding: 10px;
     display: block;
-    overflow: scroll;
+    overflow: auto;
 }
 
 a {
