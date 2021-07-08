@@ -1,8 +1,16 @@
+{{ define "title" }}
+{{.Title}} | James Fennell
+{{ end }}
+
+
 {{ define "main" }}
 
+<a href="../../">jpfennell</a> > <a href="../">Posts</a>
+
 <h1>{{ .Title }}</h1>
+
+<h3>{{.Date.Format "January 2, 2006"}}</h3>
 
 {{ .Content }}
 
 {{ end }}
-

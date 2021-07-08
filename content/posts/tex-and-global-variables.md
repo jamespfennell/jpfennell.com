@@ -1,6 +1,7 @@
 ---
 title: "TeX and global variables"
 date: 2021-05-10T20:05:40-04:00
+draft: true
 ---
 
 Suppose you have the following raw TeX (not LaTeX) file `first.tex`:

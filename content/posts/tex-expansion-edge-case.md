@@ -1,5 +1,5 @@
 ---
-title: "An edge case in TeX"
+title: "A time-traveling edge case in TeX"
 date: 2021-05-12T20:05:40-04:00
 ---
 

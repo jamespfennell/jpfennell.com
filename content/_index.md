@@ -1,5 +1,4 @@
-Software developer and (former?) mathematician living in Brooklyn, 
-NY, United States.
+Software developer and mathematician living in Brooklyn, New York City.
 
 ## Software ~~~ General
 
@@ -28,9 +27,6 @@ NY, United States.
 
 
 ## Software ~~~ Typesetting
-
-When I was doing research mathematics I got into typesetting and 
-created one thing people have found useful:
 
 - [Linux and Mac installer](https://github.com/jamespfennell/mathtime-installer)
   for Michael Spivak's MathTime Professional 2 fonts for Latex. There's a free version of the fonts, so you have no excuse to continue using the overbearingly ubiquitous Computer Modern.

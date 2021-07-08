@@ -1,12 +1,19 @@
+{{ define "title" }}
+Posts by James Fennell
+{{ end }}
+
 {{ define "main" }}
+
+
+<a href="../../">jpfennell</a>
 
 <h1>Posts</h1>
 
-<table>
+<table style="margin: 0 auto">
 {{ range .Pages }}
     <tr>
         <td>
-            {{.Date.Format "2006-01-02"}} &middot;
+            {{.Date.Format "January 2, 2006"}} &middot;
         </td>
         <td>
             <a href="{{.Permalink}}">{{.Title}}</a>
