@@ -1,5 +1,5 @@
 ---
-title: "Another side effect of token peeking in TeX"
+title: "Another token peeking side effect in TeX"
 date: 2021-09-24T20:05:40-04:00
 ---
 
