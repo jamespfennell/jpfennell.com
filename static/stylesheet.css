@@ -39,6 +39,7 @@ pre {
     font-family: ui-monospace, SFMono-Regular, SF Mono, Consolas, Liberation Mono, Menlo, monospace;
     background-color: #f7f7f7;
     border-radius: 5px;
+    border: 1px solid lightgray;
     padding: 10px;
     display: block;
     overflow: auto;
@@ -46,7 +47,7 @@ pre {
 
 a {
     text-decoration: underline;
-    color: #2A4747;
+    color: #444444;
     text-underline-position: under;
 }
 
