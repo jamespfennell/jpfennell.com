@@ -22,11 +22,16 @@ h2 span {
     opacity: 0.5;
 }
 
-h3 {
+h3#date {
     font-size: 1em;
     font-weight: normal;
     text-align: center;
     margin: -15px 0 25px 0;
+}
+
+h3 {
+    font-size: 1em;
+    font-weight: bold;
 }
 
 code {
@@ -75,4 +80,8 @@ ul li {
         width: 650px;
         margin: 30px auto;
     }
+}
+
+p img {
+    width: 100%;
 }
