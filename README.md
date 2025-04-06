@@ -1,4 +1,4 @@
-# jamespfennell.github.io
+# [jpfennell.com](https://jpfennell.com)
 
 Run the test site server with
 
