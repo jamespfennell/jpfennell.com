@@ -1,8 +1,11 @@
 {{ define "title" -}}{{.Title }} &middot; post by James Fennell{{- end }}
 
-{{ define "main" }}
+{{ define "breadcrumbs"}}
+> <a href="/posts">posts</a>
+> <a href=".">{{.Date.Format "2006-01-02"}}</a>
+{{ end }}
 
-<a href="../../">jpfennell</a> > <a href="../">Posts</a>
+{{ define "main" }}
 
 <h1>{{ .Title }}</h1>
 

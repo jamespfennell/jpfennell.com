@@ -10,13 +10,18 @@
     <title>{{ block "title" . -}}
         {{ .Site.Title }}
         {{- end }}</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Contrail+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/normalize.css">
     <link rel="stylesheet" href="/stylesheet.css">
 </head>
 <body>
-<div id="container">
+    <div id="header">
+        <div class="page-width">
+            <a href="/">jpfennell.com</a>
+            {{ block "breadcrumbs" . }}{{ end }}
+        </div>
+    </div>
+<div id="container" class="page-width">
+
 
 {{ block "main" . }}{{ end }}
 

@@ -1,3 +1,6 @@
+{{ define "breadcrumbs"}}
+{{ end }}
+
 {{ define "main" }}
 
 <h1>James Fennell</h1>
@@ -9,6 +12,6 @@
     hello@jpfennell.com
 </h3>
 
-{{ safeHTML (replace .Content " ~~~ " "<span>/</span>") }}
+{{ .Content }}
 
 {{ end }}

@@ -1,6 +1,6 @@
 Software developer and mathematician in Brooklyn, New York City.
 
-## Software ~~~ General
+## Software > General
 
 - [Hoard](https://github.com/jamespfennell/hoard)
   is a distributed fault-tolerant system for collecting data feeds, 
@@ -11,7 +11,7 @@ Software developer and mathematician in Brooklyn, New York City.
   [deployment](https://hoard3.transitdata.nyc) 
   collecting NYC transit data.
 
-## Software ~~~ Transit
+## Software > Transit
 
 - [Transiter](https://github.com/jamespfennell/transiter) is a web service that subscribes to realtime transit data 
   feeds and provides views of the data through a REST API. 
@@ -28,7 +28,7 @@ Software developer and mathematician in Brooklyn, New York City.
   ([repository](https://github.com/jamespfennell/realtimerail.nyc-react)).
 
 
-## Software ~~~ Typesetting
+## Software > Typesetting
 
 - [Texcraft](https://github.com/jamespfennell/texcraft)
   is a project to create an LLVM-style infrastructure for building TeX engines in Rust.
