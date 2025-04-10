@@ -80,7 +80,7 @@ With that in mind, we see that the first 4 bytes are the tag.
 The integer variant has been assigned tag 0,
 and the character variant tag 1.
 The second 4 bytes are then just the usual values of the payload.
-Note that the lowercase letter "a" is 41 in ASCII,
+Note that the uppercase letter "A" is hexadecimal 41 in ASCII,
     which is why its memory representation is `41 00 00 00`.
 
 ## The niche optimization
