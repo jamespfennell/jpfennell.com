@@ -1,4 +1,6 @@
-Software developer and mathematician in Brooklyn, New York City.
+I live in Brooklyn, New York City.
+Most of my work in life has been in the software/technology/mathematics space.
+I also have a part time pottery practice, [Union Pots](https://unionpots.nyc).
 
 ## Software > General
 
