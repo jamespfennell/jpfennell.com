@@ -1,0 +1,61 @@
+# Bookmarks shown on /bookmarks/, grouped by category in this order.
+# Links within a category are sorted by title on the page.
+- category: Software
+  links:
+    - title: C and C++ Prioritize Performance over Correctness
+      author: Russ Cox
+      url: https://research.swtch.com/ub
+    - title: Parse, don’t validate
+      author: Alexis King
+      url: https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/
+    - title: "Faster interpreters in Go: Catching up with C++"
+      author: Vicent Martí
+      url: https://planetscale.com/blog/faster-interpreters-in-go-catching-up-with-cpp
+    - title: Bloom filters
+      author: Eli Bendersky
+      url: https://eli.thegreenplace.net/2025/bloom-filters/
+    - title: Two studies in compiler optimisations
+      author: Henrique Cabral
+      url: https://www.hmpcabral.com/2026/03/20/two-studies-in-compiler-optimisations/
+    - title: Hyrum’s Law
+      author: Hyrum Wright
+      url: https://www.hyrumslaw.com/
+    - title: "Bump Allocation: Up or Down?"
+      author: Troy Hinckley
+      url: https://coredumped.dev/2024/03/25/bump-allocation-up-or-down/
+    - title: Understanding Memory Management
+      author: Eric Rescorla
+      url: https://educatedguesswork.org/posts/memory-management-1/
+
+- category: Literature
+  links:
+    - title: Infinite Jest Extraction
+      author: Matt Lakeman
+      url: https://mattlakeman.org/2026/03/26/infinite-jest-extraction/
+    - title: Harry Potter again again
+      author: Matt Webb
+      url: https://interconnected.org/home/2026/09/04/again
+
+- category: Travel
+  links:
+    - title: Walk Kumano Kodo
+      author: Craig Mod and John McBride
+      url: https://walkkumano.com/
+    - title: 50 Years of Travel Tips
+      author: Kevin Kelly
+      url: https://kk.org/thetechnium/50-years-of-travel-tips/
+    - title: Overtourism in Japan, and How it Hurts Small Businesses
+      author: Craig Mod
+      url: https://craigmod.com/ridgeline/210/
+
+- category: Misc
+  links:
+    - title: The Hunt for the Death Valley Germans
+      author: Tom Mahood
+      url: https://otherhand.org/home-page/search-and-rescue/the-hunt-for-the-death-valley-germans/
+    - title: Solving “Passport Application” with Haskell
+      author: James Haydon
+      url: https://jameshaydon.github.io/passport/
+    - title: Things You’re Allowed To Do
+      author: Milan Cvitkovic
+      url: https://milan.cvitkovic.net/things_youre_allowed_to_do/

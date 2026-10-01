@@ -1,27 +1,20 @@
-{{ define "title" -}}Posts by James Fennell{{ end }}
-
-{{ define "breadcrumbs"}}
-> <a href="/posts">posts</a>
-{{ end }}
+{{ define "title" -}}Blog &middot; James Fennell{{ end }}
 
 {{ define "main" }}
 
-<h1>Posts</h1>
+<div id="blog-heading">
+    <h1>Blog</h1>
+    <span>(<a href="/posts/index.xml">RSS feed</a>)</span>
+</div>
 
-<table style="margin: 0 auto">
+<ul id="post-list">
 {{ range .Pages }}
-    <tr>
-        <td style="text-align: right; ">
-            {{.Date.Format "January 2, 2006"}} &middot;
-        </td>
-        <td>
-            <a href="{{.Permalink}}">{{.Title}}</a>
-        </td>
-    </tr>
+    <li>
+        <span class="post-date">{{.Date.Format "2006-01-02"}}</span>
+        <a href="{{.Permalink}}">{{.Title}}</a>
+    </li>
 {{ end }}
-</table>
-
-
+</ul>
 
 {{ .Content }}
 {{ end }}

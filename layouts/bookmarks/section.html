@@ -1,0 +1,21 @@
+{{ define "title" -}}Bookmarks &middot; James Fennell{{ end }}
+
+{{ define "main" }}
+
+<h1>Bookmarks</h1>
+
+{{ .Content }}
+
+{{ range site.Data.bookmarks }}
+<h2>{{ .category }}</h2>
+<ul class="bookmarks">
+    {{ range sort .links "title" }}
+    <li>
+        <a href="{{ .url }}">{{ .title }}</a>
+        <span class="bookmark-author">{{ .author }}</span>
+    </li>
+    {{ end }}
+</ul>
+{{ end }}
+
+{{ end }}

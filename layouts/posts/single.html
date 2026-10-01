@@ -1,15 +1,10 @@
-{{ define "title" -}}{{.Title }} &middot; post by James Fennell{{- end }}
-
-{{ define "breadcrumbs"}}
-> <a href="/posts">posts</a>
-> <a href=".">{{.Date.Format "2006-01-02"}}</a>
-{{ end }}
+{{ define "title" -}}{{.Title }} &middot; James Fennell{{- end }}
 
 {{ define "main" }}
 
 <h1>{{ .Title }}</h1>
 
-<h3 id="date">{{.Date.Format "January 2, 2006"}}</h3>
+<p id="date">{{.Date.Format "January 2, 2006"}}</p>
 
 {{ .Content }}
 
