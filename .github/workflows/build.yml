@@ -22,6 +22,6 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          tags: jamespfennell/jpfennell.com:latest
+          tags: jamespfennell/jamesfennell.dev:latest
           # Only push to Docker Hub if this workflow is a push to master
           push: ${{ github.ref == 'refs/heads/master' && github.event_name == 'push' }}
