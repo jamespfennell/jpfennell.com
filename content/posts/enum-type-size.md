@@ -5,7 +5,7 @@ date: 2025-04-07T18:05:40-04:00
 
 
 Enums are one of the most popular features in Rust.
-An enum is type whose value is one of a specified set of variants.
+An enum is a type whose value is one of a specified set of variants.
 
 ```
 /// Foo is either a 32-bit integer or character.
@@ -58,7 +58,7 @@ fn print_memory_representation<T: std::fmt::Debug>(t: T) {
 }
 ```
 
-(This function was adapted from this [10-year old Reddit post](https://www.reddit.com/r/rust/comments/2ngnmk/viewing_any_object_as_a_raw_memory_array).)
+(This function was adapted from this [10-year-old Reddit post](https://www.reddit.com/r/rust/comments/2ngnmk/viewing_any_object_as_a_raw_memory_array).)
 
 Let's run this for our enum `Foo`.
 
@@ -68,13 +68,13 @@ print_memory_representation(Foo::Int(5));
 //                        |-- tag --| |- value -|
 
 print_memory_representation(Foo::Char('A'));
-// type=Foo value=Char('A'): 01 00 00 00 41 00 00 00 
+// type=Foo value=Char('A'): 01 00 00 00 41 00 00 00
 //                           |-- tag --| |- value -|
 ```
 
 The first thing to point out is that this computer's memory is _little endian_,
     so the lowest bytes come first.
-In 32-bit hex the number 5 is `0x00000005`, but its little endian representation is `05 00 00 00`.
+In 32-bit hex the number 5 is `0x00000005`, but its little-endian representation is `05 00 00 00`.
 
 With that in mind, we see that the first 4 bytes are the tag.
 The integer variant has been assigned tag 0,
@@ -86,9 +86,9 @@ Note that the uppercase letter "A" is hexadecimal 41 in ASCII,
 ## The niche optimization
 
 Aside from the general tags scheme,
-    there is one well known enum size optimization called the niche optimization.
+    there is one well-known enum size optimization called the niche optimization.
 This optimization works for types where only one of the variants has a payload.
-A good example is the built in option type:
+A good example is the built-in option type:
 
 ```
 enum Option<char> {
@@ -108,9 +108,9 @@ assert_eq!(std::mem::size_of::<Option<char>>(), 4);
 What's going on?
 The Rust compiler knows that while `char` takes up 4 bytes of memory,
     not every value of those 4 bytes is a valid value of `char`.
-Char only has about `2^21` valid values (one for each Unicode code point),
+`char` only has about `2^21` valid values (one for each Unicode code point),
     whereas 4 bytes support `2^32` different values.
-The compiler choses one of these invalid bit patterns as a _niche_.
+The compiler chooses one of these invalid bit patterns as a _niche_.
 It then represents the enum value without using tags.
 It represents the `Some` variant identically to char.
 It represents the `None` variant using the niche.
@@ -119,16 +119,16 @@ One interesting question is: what exact niche does Rust use?
 Let's print the memory representations to see:
 
 ```
-let a: char = 'A'
+let a: char = 'A';
 print_memory_representation(a);
-// type=char value='A': 41 00 00 00 
+// type=char value='A': 41 00 00 00
 
 print_memory_representation(Some(a));
-// type=Option<char> value=Some('A'): 41 00 00 00 
+// type=Option<char> value=Some('A'): 41 00 00 00
 
 let none: Option<char> = None;
 print_memory_representation(none);
-// type=Option<char> value=None: 00 00 11 00 
+// type=Option<char> value=None: 00 00 11 00
 ```
 
 As we see, the memory representations of `'A'` and `Some('A')` are identical.
@@ -142,7 +142,7 @@ A quick search reveals that this number is exactly one bigger than the largest
 My understanding was that Rust doesn't perform any more optimizations,
     so I was pleasantly surprised recently when I found one.
 
-The context is nested enums. Start with an inner enum
+The context is nested enums. Start with an inner enum:
 
 ```
 enum Inner {
@@ -159,11 +159,11 @@ If we look at the representation in memory,
 assert_eq!(std::mem::size_of::<Inner>(), 8);
 
 print_memory_representation(Inner::A(2));
-// type=Inner value=A(2): 00 00 00 00 02 00 00 00 
+// type=Inner value=A(2): 00 00 00 00 02 00 00 00
 //                        |-- tag --| |- value -|
 
 print_memory_representation(Inner::B(3));
-// type=Inner value=B(3): 01 00 00 00 03 00 00 00 
+// type=Inner value=B(3): 01 00 00 00 03 00 00 00
 //                        |-- tag --| |- value -|
 ```
 
@@ -176,9 +176,9 @@ enum Outer {
 }
 ```
 
-My guess was that the size of values of this type would be 12 bytes - 
+My guess was that the size of values of this type would be 12 bytes —
     8 bytes for the largest payload `Inner`, plus 4 bytes for the tag.
-But it's not - values take up only 8 bytes!
+But it's not — values take up only 8 bytes!
 
 ```
 assert_eq!(std::mem::size_of::<Outer>(), 8);
@@ -186,7 +186,7 @@ assert_eq!(std::mem::size_of::<Outer>(), 8);
 
 What's going on here?
 
-First let's check what values of type `Outer::C` look like in memory:
+First let's check what values of the variant `Outer::C` look like in memory:
 
 ```
 print_memory_representation(Outer::C(5));
@@ -201,11 +201,11 @@ Next look at `Outer::D`:
 
 ```
 print_memory_representation(Outer::D(Inner::A(2)));
-// type=Outer value=D(A(2)): 00 00 00 00 02 00 00 00 
+// type=Outer value=D(A(2)): 00 00 00 00 02 00 00 00
 //                           |-- tag --| |- value -|
 
 print_memory_representation(Outer::D(Inner::B(3)));
-// type=Outer value=D(B(3)): 01 00 00 00 03 00 00 00 
+// type=Outer value=D(B(3)): 01 00 00 00 03 00 00 00
 //                           |-- tag --| |- value -|
 ```
 
@@ -222,7 +222,7 @@ I guess the Rust compiler has put the following pieces together:
 
 - The payload for every other variant of `Outer` is no larger than any of the payloads of `Inner`.
     In particular, if `Inner` values are of the form `<Inner tag><Inner payload>`,
-    then the payload for every other variant of `Outer` fits inside `<Inner payload>`. 
+    then the payload for every other variant of `Outer` fits inside `<Inner payload>`.
 
 We can thus represent values of `Outer` in the form `<Outer tag><Outer remainder>` where
 
