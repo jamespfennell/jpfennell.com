@@ -31,9 +31,9 @@ These are my favorite projects:
   is a distributed fault-tolerant system for collecting data feeds,
   written in Go.
   I currently have a
-  [three](https://hoard1.transitdata.nyc)
-  [replica](https://hoard2.transitdata.nyc)
-  [deployment](https://hoard3.transitdata.nyc)
+  [three](https://hoard.a.jamesfennell.dev)
+  [replica](https://hoard.b.jamesfennell.dev)
+  [deployment](https://hoard.d.jamesfennell.dev)
   collecting NYC transit data.
 
 - The [realtimerail.nyc TypeScript/React webapp](https://www.realtimerail.nyc)
