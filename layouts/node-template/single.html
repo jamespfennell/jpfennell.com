@@ -1,0 +1,49 @@
+{{- /*
+    Template for the status page of each of my servers (a.jamesfennell.dev etc.).
+    Hugo renders this page using the site's base layout, and the node binary
+    then fills in the [[ ... ]] parts at request time. See node/README.md.
+*/ -}}
+
+{{ define "meta" }}
+    <meta name="description" content="Status page for my server [[ .Hostname ]]">
+{{- end }}
+
+{{ define "title" }}[[ .Hostname ]]{{ end }}
+
+{{ define "header" }}
+    <a id="site-name" href="/">[[ .Hostname ]]</a>
+{{- end }}
+
+{{ define "main" }}
+<p>
+    You have reached one of <a href="https://jamesfennell.dev">James Fennell's</a> VMs.
+</p>
+<p>IP address: <code>[[ .IP ]]</code></p>
+<p>Location: [[ .Location ]]</p>
+[[ range .Sections ]]
+<h2>[[ .Title ]]</h2>
+[[- with .Intro ]]
+<p>[[ . ]]</p>
+[[- end ]]
+[[- if .Entries ]]
+<table class="node-table">
+    <thead>
+        <tr>
+            <th>Hostname</th>
+            <th>Git repo</th>
+        </tr>
+    </thead>
+    <tbody>
+        [[- range $entry := .Entries ]]
+        <tr>
+            <td class="mono"><a href="[[ .URL ]]">[[ .Name ]]</a></td>
+            <td class="mono">[[ with .Repo ]]<a href="https://[[ . ]]">[[ $entry.RepoName ]]</a>[[ end ]]</td>
+        </tr>
+        [[- end ]]
+    </tbody>
+</table>
+[[- else ]]
+<p>None.</p>
+[[- end ]]
+[[ end ]]
+{{ end }}

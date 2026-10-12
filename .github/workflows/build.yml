@@ -18,10 +18,18 @@ jobs:
           username: jamespfennell
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build the Docker image and push to Docker Hub
-        id: docker_build
+      - name: Build the website Docker image and push to Docker Hub
         uses: docker/build-push-action@v2
         with:
+          target: website
           tags: jamespfennell/jamesfennell.dev:latest
+          # Only push to Docker Hub if this workflow is a push to master
+          push: ${{ github.ref == 'refs/heads/master' && github.event_name == 'push' }}
+
+      - name: Build the node Docker image and push to Docker Hub
+        uses: docker/build-push-action@v2
+        with:
+          target: node
+          tags: jamespfennell/node:latest
           # Only push to Docker Hub if this workflow is a push to master
           push: ${{ github.ref == 'refs/heads/master' && github.event_name == 'push' }}

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    {{- block "meta" . }}
     {{- $description := "Personal website of James Fennell" }}
     {{- if .IsPage }}
     {{- /* Use the post's first paragraph as its description. */}}
@@ -17,6 +18,7 @@
     <meta property="og:url" content="{{ .Permalink }}">
     <meta name="twitter:card" content="summary">
     <link rel="alternate" type="application/rss+xml" title="James Fennell" href="/posts/index.xml">
+    {{- end }}
     <meta name="author" content="James Fennell">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ block "title" . -}}
@@ -39,10 +41,12 @@
 </head>
 <body>
 <header id="header" class="page-width">
+    {{- block "header" . }}
     <a id="site-name" href="/">James Fennell</a>
     <nav>
         <a href="/posts/">Blog</a><span class="sep">&middot;</span><a href="/bookmarks/">Bookmarks</a>
     </nav>
+    {{- end }}
 </header>
 
 <main id="container" class="page-width">
