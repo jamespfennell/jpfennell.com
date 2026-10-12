@@ -68,6 +68,8 @@ type section struct {
 	// Optional paragraph shown under the title.
 	Intro   string
 	Entries []Entry
+	// Whether any entry has a repo, in which case the section has a repo column.
+	HasRepo bool
 }
 
 type page struct {
@@ -139,6 +141,7 @@ func loadPage(configPath string) (*page, error) {
 		for _, e := range entries {
 			if e.Section == s.key {
 				sec.Entries = append(sec.Entries, e)
+				sec.HasRepo = sec.HasRepo || e.Repo != ""
 			}
 		}
 		p.Sections = append(p.Sections, sec)

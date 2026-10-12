@@ -287,7 +287,6 @@ pre code {
 /* Node status pages (a.jamesfennell.dev etc.); see node/README.md. */
 
 .node-table {
-    width: 100%;
     border-collapse: collapse;
     margin: 0 0 1rem;
 }
@@ -320,6 +319,25 @@ pre code {
     font-family: 'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace;
     font-size: 0.85em;
     white-space: nowrap;
+}
+
+/* Columns of icon links, e.g. the GitHub mark linking to the source. */
+.node-table .icon {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.node-table .icon a {
+    display: inline-block;
+    color: var(--bright);
+    text-decoration: none;
+}
+
+.node-table .icon svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.125em;
+    fill: currentColor;
 }
 
 @media (max-width: 560px) {
